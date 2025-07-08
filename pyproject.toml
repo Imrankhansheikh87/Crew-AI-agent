@@ -1,0 +1,23 @@
+[project]
+name = "bilingual_ai_agent_with_american_accent_and_real_time_interaction"
+version = "0.1.0"
+description = "bilingual_ai_agent_with_american_accent_and_real_time_interaction using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "crewai[tools]>=0.119.0,<1.0.0"
+]
+
+[project.scripts]
+bilingual_ai_agent_with_american_accent_and_real_time_interaction = "bilingual_ai_agent_with_american_accent_and_real_time_interaction.main:run"
+run_crew = "bilingual_ai_agent_with_american_accent_and_real_time_interaction.main:run"
+train = "bilingual_ai_agent_with_american_accent_and_real_time_interaction.main:train"
+replay = "bilingual_ai_agent_with_american_accent_and_real_time_interaction.main:replay"
+test = "bilingual_ai_agent_with_american_accent_and_real_time_interaction.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

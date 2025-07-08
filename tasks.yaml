@@ -1,0 +1,39 @@
+---
+query_understanding_task:
+  description: Analyze and interpret user queries in {language_preference} for the
+    truck dispatching industry.
+  expected_output: Accurate interpretation of user queries in both English and Hindi,
+    tailored to the dispatching context.
+  async_execution: false
+  agent: language_processing_expert
+response_generation_task:
+  description: Create text responses based on query analysis and dispatch context
+    for the truck dispatching industry.
+  expected_output: Text responses that address user queries and provide relevant dispatch
+    information.
+  async_execution: false
+  agent: language_processing_expert
+  context:
+  - query_understanding_task
+speech_conversion_task:
+  description: Convert text responses into speech with an American accent for English
+    and native accent for Hindi.
+  expected_output: Spoken responses in the desired accents, enhancing communication
+    with dispatchers and drivers.
+  async_execution: false
+  agent: speech_synthesis_expert
+  context:
+  - response_generation_task
+dispatch_management_task:
+  description: Access and update dispatch schedules and provide relevant information
+    to users in the truck dispatching industry.
+  expected_output: Updated dispatch schedules and timely information provided to dispatchers
+    and drivers.
+  async_execution: false
+  agent: dispatch_coordination_expert
+location_integration_task:
+  description: Utilize real-time location data to optimize dispatch decisions and
+    provide updates in the truck dispatching industry.
+  expected_output: Optimized dispatch routes and real-time updates for improved coordination.
+  async_execution: false
+  agent: location_tracking_expert
